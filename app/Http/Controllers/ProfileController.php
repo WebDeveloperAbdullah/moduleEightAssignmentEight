@@ -14,19 +14,18 @@ class ProfileController extends Controller
             "name"=>$name,
             "age"=>$age,
         ];
-        return ($data);
+
+
+            $name = "access_token";
+            $value = "123-XYZ";
+            $minutes = 1;
+            $path = ('/');
+            $domain = $_SERVER['SERVER_NAME'];
+            $secure =false;
+            $httpOnly = true;
+               
+               return response($data)->cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly);
+               
     }
 
-   public function setCookie(){
-    
-$name = "access_token";
-$value = "123-XYZ";
-$minutes = 1;
-$path = ('/');
-$domain = $_SERVER['SERVER_NAME'];
-$secure =false  ;
-$httpOnly = true;
-   
-   return response()->cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly);
-   }
 }
